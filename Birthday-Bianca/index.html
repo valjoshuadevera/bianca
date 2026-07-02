@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy 30th Birthday Bianca</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Ambient effects -->
+  <div class="sparkle-field" aria-hidden="true"></div>
+  <canvas id="confettiCanvas" class="confetti-canvas" aria-hidden="true"></canvas>
+
+  <!-- Music player -->
+  <aside class="music-player" aria-label="Birthday music controls">
+    <button class="music-btn" id="playMusic" type="button" aria-label="Play birthday music">▶</button>
+    <button class="music-btn" id="pauseMusic" type="button" aria-label="Pause birthday music">⏸</button>
+    <button class="music-btn" id="muteMusic" type="button" aria-label="Mute birthday music">🔇</button>
+    <input id="volumeSlider" class="volume-slider" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Music volume">
+  </aside>
+
+  <!-- Local audio assets -->
+  <audio id="doorAudio" preload="auto" src="assets/audio/door-open.mp3"></audio>
+  <audio id="birthdayAudio" preload="auto" loop src="assets/audio/friends.mp3"></audio>
+  <audio id="popAudio" preload="auto" src="assets/audio/pop.mp3"></audio>
+
+  <!-- Landing page -->
+  <main>
+    <section class="landing" id="landing" aria-label="Birthday door entrance">
+      <div class="hallway-glow" aria-hidden="true"></div>
+      <div class="landing-copy reveal-on-load">
+        <p class="eyebrow">Happy 30th Birthday</p>
+        <h1>Bianca</h1>
+        <p class="subtitle">"Someone special is waiting behind this door..."</p>
+      </div>
+
+      <div class="door-stage" id="doorStage">
+        <div class="door-shadow" aria-hidden="true"></div>
+        <div class="door-frame">
+          <img class="door-image" src="assets/images/monica-door.png" alt="Monica apartment purple door with apartment number 20">
+          <div class="door-handle" aria-hidden="true"></div>
+          <div class="peephole-glow" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <button class="open-door-btn" id="openDoorBtn" type="button">
+        <span>OPEN THE DOOR</span>
+      </button>
+    </section>
+
+    <!-- Birthday living room -->
+    <section class="celebration hidden" id="celebration" aria-label="Birthday celebration living room">
+      <div class="living-room" aria-hidden="true">
+        <div class="fairy-lights"></div>
+        <div class="banner">HAPPY BIRTHDAY BIANCA</div>
+        <div class="decor decor-cake">🎂</div>
+        <div class="decor decor-gifts">🎁</div>
+        <div class="decor decor-flowers">🌸</div>
+        <div class="decor decor-sofa">🛋</div>
+      </div>
+
+      <div class="balloon-layer" id="balloonLayer" aria-label="Floating birthday balloons"></div>
+
+      <!-- Birthday greeting -->
+      <header class="birthday-greeting reveal-section">
+        <p class="eyebrow">The one where Bianca turns 30</p>
+        <h2>Happy 30th Birthday Bianca!</h2>
+        <p>Today we celebrate someone who brings happiness, kindness, laughter, and love to everyone around her.</p>
+        <p>May your 30th birthday be filled with unforgettable memories and endless happiness.</p>
+      </header>
+
+      <!-- Joey 30th birthday moment -->
+      <section class="joey-moment reveal-section" aria-label="Joey turning 30 birthday moment">
+        <img src="assets/images/cast/joeyt.jpg" alt="Joey Tribbiani reacting to turning thirty">
+        <div class="joey-quote">
+          <p>"Why God, why?</p>
+          <p>We had a deal!"</p>
+        </div>
+      </section>
+
+      <!-- Friends cast section -->
+      <section class="cast-section reveal-section" aria-labelledby="castTitle">
+        <h2 id="castTitle">Your Friends Came to Celebrate!</h2>
+        <div class="cast-grid" id="castGrid"></div>
+      </section>
+
+      <!-- Final celebration -->
+      <section class="finale reveal-section" aria-label="Final birthday message">
+        <canvas id="fireworksCanvas" class="fireworks-canvas" aria-hidden="true"></canvas>
+        <div class="gold-particles" aria-hidden="true"></div>
+        <p class="eyebrow">Final celebration</p>
+        <h2>Happy 30th Birthday Bianca!</h2>
+        <p>May this new chapter bring you endless happiness, laughter, success, love, good health, and dreams that come true.</p>
+        <p>Thank you for being such an amazing sister.</p>
+        <p>We love you so much.</p>
+        <p class="heart-line">Happy Birthday! ❤️❤️❤️</p>
+      </section>
+
+      <!-- Footer -->
+      <footer class="site-footer">
+        <p>"I'll Be There For You."</p>
+        <p>Inspired by Friends.</p>
+        <p>Made with ❤️ for Bianca.</p>
+        <p>Happy 30th Birthday!</p>
+      </footer>
+    </section>
+  </main>
+
+  <!-- Birthday letter modal -->
+  <div class="modal-backdrop" id="letterModal" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="modalName" data-joey-background="assets/images/cast/joeyt.jpg">
+    <img class="modal-background-preload" src="assets/images/cast/joeyt.jpg" alt="" aria-hidden="true">
+    <div class="letter-card" role="document">
+      <button class="close-modal" id="closeModal" type="button" aria-label="Close birthday letter">×</button>
+      <img id="modalImage" class="modal-image" src="assets/images/cast/rachel.jpg" alt="">
+      <article class="letter-paper">
+        <h2 id="modalName">Rachel Green</h2>
+        <p id="modalMessage"></p>
+      </article>
+    </div>
+  </div>
+
+  <!-- Compliment toast -->
+  <div class="compliment-toast" id="complimentToast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>

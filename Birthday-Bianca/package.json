@@ -1,0 +1,9 @@
+{
+  "name": "birthday-bianca",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Offline interactive birthday website for Bianca.",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
