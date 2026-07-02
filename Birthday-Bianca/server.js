@@ -30,7 +30,7 @@ if (fs.existsSync(envPath)) {
   });
 }
 
-const port = Number(process.env.PORT) || 5173;
+const port = Number(process.env.PORT) || Number(process.env.LOCAL_PORT) || 5173;
 const mimeTypes = {
   ".html": "text/html; charset=utf-8",
   ".css": "text/css; charset=utf-8",
